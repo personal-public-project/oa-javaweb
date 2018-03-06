@@ -32,6 +32,7 @@ public class JdbcTemplateUtil {
 
 	/**
 	 * 通过泛型封装插入方法
+	 * 这样封装的好处有哪些？
 	 * 
 	 * @param t
 	 * @return

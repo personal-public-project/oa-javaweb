@@ -31,7 +31,7 @@ public class AddUserServlet extends HttpServlet {
 		
 		addUserService.addUser(request.getParameter("userName"));*/
 		
-		AddUserService.getService().addUser(request.getParameter("userName"));
+		AddUserService.getService().addUser(request.getParameter("userName"),request.getParameter("address"));
 	}
 
 	/**

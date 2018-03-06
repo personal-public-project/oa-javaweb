@@ -8,6 +8,7 @@
 </head>
 <body>
 	姓名：<input id="userName" name="userName" />
+	地址：<input id="address" name="address" />
 	<input id="btnSave" type="button" value="提交">
 	
 	<script type="text/javascript" src="jquery-3.2.0.min.js"></script>
@@ -17,10 +18,11 @@
 			// 绑定点击事件
 			$("#btnSave").click(function(){
 				var userName = $("#userName").val();
+				var address = $("#address").val();
 				$.ajax({
 					url:"AddUserServlet",// 后端处理的服务
 					type:"post",
-					data:{userName:userName},
+					data:{userName:userName,address:address},
 					dataType:"json",
 					success:function(data){ // 回调函数
 						console.log(data);

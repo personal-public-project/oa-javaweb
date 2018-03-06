@@ -25,9 +25,10 @@ public class AddUserService {
 	 * @param userName
 	 * @return
 	 */
-	public int addUser(String userName) {
+	public int addUser(String userName,String address) {
 		User user = new User();
 		user.setUserName(userName);
+		user.setAddress(address);
 		return JdbcTemplateUtil.insert(user);
 	}
 }
