@@ -1,16 +1,33 @@
 package com.learn.service;
 
+import com.learn.model.User;
 import com.learn.utils.JdbcTemplateUtil;
 
 public class AddUserService {
 
+	static AddUserService addUserService = null;
+
 	/**
-	 * 保存数据到数据库
+	 * 鍗曚緥
+	 * 
+	 * @return
+	 */
+	public static AddUserService getService() {
+		if (addUserService == null) {
+			addUserService = new AddUserService();
+		}
+		return addUserService;
+	}
+
+	/**
+	 * 淇濆瓨鐢ㄦ埛
+	 * 
 	 * @param userName
 	 * @return
 	 */
-	public int addUser(String userName){
-		
-		return JdbcTemplateUtil.insert(userName);
+	public int addUser(String userName) {
+		User user = new User();
+		user.setUserName(userName);
+		return JdbcTemplateUtil.insert(user);
 	}
 }

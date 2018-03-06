@@ -26,9 +26,12 @@ public class AddUserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("»ñÈ¡ÇëÇóµÄ²ÎÊı£º"+request.getParameter("userName"));
-		AddUserService addUserService = new AddUserService();
-		addUserService.addUser(request.getParameter("userName"));
+		//System.out.println("å…¥å‚å‚æ•°ï¼š"+request.getParameter("userName"));
+		/*AddUserService addUserService = new AddUserService();
+		
+		addUserService.addUser(request.getParameter("userName"));*/
+		
+		AddUserService.getService().addUser(request.getParameter("userName"));
 	}
 
 	/**
